@@ -1,0 +1,23 @@
+/* ヘッダーはどのファイルにも共通して使用するものなので、 common.cssファイルを作成してそこに記述 */
+/*  Status Code Quiz の文字の背景*/
+.header {
+    background: #000;
+}
+
+/* header__innerを設けてヘッダーの内側に余白を確保する。デザイン上で明確な境界線はないがこの見えない要素をいれておくことで柔軟なコーディングができるらしい*/
+
+.header__inner {
+    /* ↓ 「index.php」ファイルのブロック<div>要素を中央揃えにする <div class='header_inner'>の中にある＜ａ＞タグはインライン要素だから中央揃えにできないから「Status Code Quiz」という文字列は中央にならない*/
+    margin: 0 auto;
+    /* 余白の付け方はそれぞれですので、marginのみで余白を付けることもできるが要素の内側に余白をつけたい場合はpaddingプロパティを使用します。 ただ、20pxや15pxは例になりますので、必ずしもこの値である必要ない */
+    padding: 20px 15px;
+    /*最大値を設定する。 「index.php」ファイルの<div class='header_inner'>（ブロック要素）の横幅の最大値を設定している １２３０ｐｘ以上にはできないという認識であってますか？→認識の通り  */
+    max-width: 1230px;
+}
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
