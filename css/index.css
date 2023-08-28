@@ -1,0 +1,76 @@
+/* p タグを使用してテキストの表示を行う。スタイルの記述は以下の通りです。 */
+.quiz__content {
+    /* ↓「index.php」ファイルに＜ｐ＞タグ（ブロック要素）を中央揃えにしている。 */
+    margin: 0 auto;
+    padding: 60px 15px;
+    /* common.cssファイルの.header__innerの ヘッダーの幅（ｐｘ）と合わせている*/
+    max-width: 1230px;
+}
+
+.question {
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 550px;
+    /* ↓要素の四隅を３PX　角丸にする */
+    border-radius: 3px;
+    background: #000;
+    /* text-alignプロパティは、文字や画像に対して、水平方向の揃え方を指定するプロパティ */
+    text-align: center;
+}
+
+.question__text {
+    color: #fff;
+    text-align: left;
+}
+
+.quiz-form {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 550px;
+    text-align: center;
+}
+
+.quiz-form__item {
+    margin-bottom: 30px;
+}
+
+.quiz-form__group {
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.quiz-form__radio {
+    display: none;
+}
+
+.quiz-form__radio:checked+label {
+    background: #ddd;
+}
+
+.quiz-form__label {
+    display: block;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.quiz-form__button {
+    width: 550px;
+}
+
+.quiz-form__button-submit {
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 選択した時に、<input>タグの色が変わるようにするために、以下の記述があります。 */
+.quiz-form__radio:checked+label {
+    background: #ddd;
+}
