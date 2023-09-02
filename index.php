@@ -1,6 +1,20 @@
 <!-- 2章：ステータスコードを学べるアプリを作ってみよう -->
+<?php
+// require_once 既に取り込まれたファイルは2回目以降は取り込まない（1度だけ取り込む） 
+// index.php ファイルで、ランダムに取得を行うため require_once を利用して status_code.php ファイルの読み込み
+require_once('config/status_codes.php');
+// <?php array_rand('対象の配列', '要素数'); 指定した配列の中から要素を無作為に抜き出す関数
+$random_numbers = array_rand($status_codes, 4);
+
+foreach ($random_numbers as $index) {
+$options[] = $status_codes[$index];
+}
+// 先程の配列 options の中から 1 つを正解として新しい配列 question に代入
+$question = $options[mt_rand(0, 3)];
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +43,8 @@
 <!-- 同じ文書内で、1つのクラス名を複数の要素に指定することができます。（1つのスタイルを複数の要素に適用させることができます） -->
                 <p class="question__text">Q. 以下の内容に当てはまるステータスコードを選んでください</p>
                 <p class="question__text">
+<!-- 、問題のステータスコードの説明文を表示させます。正解の配列の中からキーが description のものを表示させる -->
+                <?php echo $question['description'] ?>
                 </p>
             </div><!-- question -->
         </div><!-- quiz__content  -->
@@ -54,3 +70,4 @@
 </body>
 
 </html>
+

@@ -57,4 +57,5 @@ $status_codes = [
     'description' => '一時的にサーバにアクセスが出来ない'
   ]
 ];
-var_dump($status_codes);
+
+
