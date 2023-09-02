@@ -47,25 +47,32 @@ $question = $options[mt_rand(0, 3)];
                 <?php echo $question['description'] ?>
                 </p>
             </div><!-- question -->
-        </div><!-- quiz__content  -->
+        
 <!-- フォームの作成 -->
 <!-- データを送信できるように、<form>タグを利用。また、選択できるように、<input>タグの type 属性は、 radio としている-->
     <!-- action 属性で入力されたデータを処理する　今回は「 result.php」ファイル-->
         <form class="quiz-form" action="result.php" method="post">
-            <input type="hidden" name="answer_code" value="">
+            <input type="hidden" name="answer_code" value="<?php echo $question['code'] ?>">
+            <!-- ↑value=には解答となるデータを送信配列の中の code を通して答え合わせを行えるようにする-->
             <div class="quiz-form__item">
+                <?php foreach ($options as $option): ?>
                 <div class="quiz-form__group">
-                    <input class="quiz-form__radio" id="" type="radio" name="option" value="">
-                    <label class="quiz-form__label" for="">
+                    <!-- <input>タグの id 属性と label タグの for 属性に同じものを指定する -->
+                    <input class="quiz-form__radio" id="<?php echo $option['code'] ?>
+                    "type="radio" name="option" value="<?php echo $option['code'] ?>">
+                    <label class="quiz-form__label" for="<?php echo $option['code'] ?>">
+                    <?php echo $option['code'] ?>
                     </label>
                 </div>    <!-- quiz-form__group -->
+                <?php endforeach; ?>
             </div><!-- "quiz-form__item -->
             <div class="quiz-form__button">
                 <button class="quiz-form__button-submit" type="submit">
                 回答
                 </button>
             </div><!--  quiz-form__button-->  
-        </form>   
+        </form> 
+        </div><!-- quiz__content  -->            
     </main>
 </body>
 

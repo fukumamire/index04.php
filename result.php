@@ -50,7 +50,7 @@ $result = $option === $code;
         <div class="result__content">
             <div class="result">
                 <?php if ($result): ?><!-- 条件分岐を記載 -->
-                <h2 class=>"result__text--correct">正解</h2>
+                <h2 class="result__text--correct">正解</h2>
                 <?php else: ?>
                 <h2 class="result__text--incorrect">不正解</h2>
                 <?php endif; ?>
@@ -64,14 +64,14 @@ $result = $option === $code;
                         <!--th (table header)見出し  -->
                         <th class="answer-table__header">ステータスコード</th>
                         <td class="answer-table__text">
-                            <?php echo $code ?>
+                        <?php echo $code ?>
                         </td>
                     </tr>
 
                     <tr class="answer-table__row">
                         <th class="answer-table__header">説明</th>
                         <td class="answer-table__text">
-                            <?php echo $description ?>
+                        <?php echo $description ?>
                         </td>
                     </tr>
                 </table>    
